@@ -7,8 +7,9 @@
 Array methods zijn ingebouwde functies die je kunt gebruiken om arrays te bewerken. Ze maken het veel gemakkelijker om data te filteren, sorteren, transformeren en doorzoeken zonder dat je zelf loops hoeft te schrijven.
 
 ### De belangrijkste Array Methods
+#### `filter()`
 
- alleen de elementen die voldoen aan een bepaalde voorwaarde.
+`filter()` alleen de elementen die voldoen aan een bepaalde voorwaarde.
 
 ```javascript
 const getallen = [1, 2, 3, 4, 5, 6];
