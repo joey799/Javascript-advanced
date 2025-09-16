@@ -5,16 +5,18 @@ function slaOpNaam() {
     console.log('slaOpNaam() aangeroepen');
     
     // TODO: Haal naam uit input veld
-    const naam = /* jouw code hier */
+    const naam = document.getElementById('naam-input').value;
     
     // TODO: Check of naam niet leeg is
-    if (/* jouw code hier */) {
+    if (naam === '') {
         alert('Voer eerst een naam in!');
         return;
     }
     
     // TODO: Sla naam op in localStorage
-    /* jouw code hier */;
+    localStorage.setItem('opgeslagenNaam', naam);
+    const opgeslagenNaam = localStorage.getItem('opgeslagenNaam');
+    console.log('Naam opgeslagen in localStorage:', opgeslagenNaam);
     
     // TODO: Toon welkomstbericht
     toonWelkom();
@@ -25,24 +27,29 @@ function slaOpNaam() {
 
 function toonWelkom() {
     // TODO: Haal naam op uit localStorage
-    const opgeslagenNaam = /* jouw code hier */
+    const opgeslagenNaam = localStorage.getItem('opgeslagenNaam');
     
     const welkomElement = document.getElementById('welkom-bericht');
     
     // TODO: Toon juiste bericht
-    if (/* jouw code hier */) {
-        welkomElement.textContent = /* jouw code hier */
+    if (opgeslagenNaam) {
+        welkomElement.textContent = `Welkom terug, ${opgeslagenNaam}!`;
     } else {
         welkomElement.textContent = 'Geen naam opgeslagen.';
+
+
+
+        console.log('Geen naam gevonden in localStorage');
     }
 }
 
 function wisNaam() {
     // TODO: Verwijder naam uit localStorage
-    /* jouw code hier */;
+    localStorage.removeItem('opgeslagenNaam');
+    console.log('Naam verwijderd uit localStorage');
     
     toonWelkom();
 }
 
 // TODO: Roep toonWelkom() aan bij pagina laden
-/* jouw code hier */;
+window.onload = toonWelkom;
