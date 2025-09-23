@@ -1,0 +1,130 @@
+/* Reset en basisstijlen */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Licht paars/roze achtergrond voor de hele pagina */
+body {
+  background-color: #f5e6f8; /* Licht paars/roze */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* Witte box voor de hele birthday reminder - zonder schaduw, scherpere hoeken */
+#birthday-reminder {
+  background-color: white;
+  border-radius: 5px; /* Scherpere hoeken */
+  width: 100%;
+  max-width: 500px; /* Breder */
+  overflow: hidden;
+  border: 1px solid #e0e0e0; /* Duidelijke border */
+}
+
+/* Header met titel */
+.header {
+  padding: 25px 30px;
+}
+
+.header h1 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Container voor de verjaardagslijst - zonder scroll */
+#reminders {
+  padding: 0;
+}
+
+/* Elk persoon item - zonder lijnen ertussen */
+.person {
+  display: flex;
+  align-items: center;
+  padding: 20px 30px; /* Meer padding voor breder uiterlijk */
+}
+
+.person img {
+  width: 75px; /* Iets groter */
+  height: 75px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 20px; /* Meer ruimte */
+}
+
+.info h2 {
+  font-size: 18px; /* Iets groter */
+  font-weight: 600;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.info p {
+  color: #777;
+  font-size: 15px; /* Iets groter */
+}
+
+/* Container voor de knop */
+.button-container {
+  padding: 25px 30px; /* Meer padding voor breder uiterlijk */
+}
+
+/* Paarse Clear All knop met witte tekst - breder en scherpere hoeken */
+#clear-all {
+  display: block;
+  width: 100%;
+  padding: 16px; /* Meer padding voor bredere knop */
+  background-color: #8a2be2; /* Paarse kleur */
+  color: white;
+  border: none;
+  border-radius: 5px; /* Scherpere hoeken */
+  font-size: 17px; /* Iets groter */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#clear-all:hover {
+  background-color: #7a1fd2; /* Donkerder paars bij hover */
+}
+
+/* Stijlen voor laad- en foutmeldingen */
+.loading {
+  text-align: center;
+  padding: 30px;
+  color: #666;
+  font-style: italic;
+}
+
+.error {
+  text-align: center;
+  padding: 30px;
+  color: #e74c3c;
+  font-weight: 500;
+}
+
+/* Responsive aanpassingen */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+  
+  .header, .person, .button-container {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .person img {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .header h1 {
+    font-size: 22px;
+  }
+}
